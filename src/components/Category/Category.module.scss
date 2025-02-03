@@ -1,0 +1,17 @@
+@use "../../assets/styles/base/variables" as *;
+@use "../../assets/styles/base/mixins" as *;
+
+.category {
+  padding: 3px 10px;
+  border: 1px solid #aaa;
+  border-radius: 9999px;
+  color: #666;
+  font-size: $font-xsmall;
+}
+
+@include respond("md") {
+  .category {
+    padding: 2px 8px;
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,155 @@
+@use "../../assets/styles/base/variables" as *;
+@use "../../assets/styles/base/mixins" as *;
+
+.container {
+  margin: 30px auto 0;
+  max-width: 700px;
+  width: 90%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 30px;
+
+  .contact_title {
+    font-size: $font-xlarge;
+  }
+
+  .contact_description {
+    margin-top: 30px;
+    letter-spacing: 0.03em;
+    line-height: 200%;
+  }
+
+  .contact_form {
+    margin-top: 30px;
+
+    .form_contents {
+      position: relative;
+      margin-top: 70px;
+
+      .form_placeholder {
+        position: absolute;
+        left: 0;
+        padding: 15px 20px;
+        color: #aaa;
+        pointer-events: none;
+        transition: 0.5s;
+        font-size: $font-medium;
+      }
+
+      input,
+      select {
+        width: 100%;
+        font-size: $font-medium;
+        letter-spacing: 0.1em;
+        padding: 15px 20px;
+        border: none;
+        border-bottom: 1px solid #999;
+        outline: none;
+        transition: 0.5s;
+        line-height: 100%;
+      }
+
+      textarea {
+        width: 100%;
+        height: 200px;
+        font-size: $font-medium;
+        letter-spacing: 0.1em;
+        padding: 15px 20px;
+        border: none;
+        border-bottom: 1px solid #999;
+        outline: none;
+        resize: vertical;
+      }
+
+      & input:valid ~ .form_placeholder,
+      & input:focus ~ .form_placeholder,
+      & select:valid ~ .form_placeholder,
+      & select:focus ~ .form_placeholder,
+      & textarea:valid ~ .form_placeholder,
+      & textarea:focus ~ .form_placeholder {
+        transform: translateX(10px) translateY(-7px);
+        font-size: $font-small;
+        padding: 0 10px;
+        letter-spacing: 0.1em;
+      }
+    }
+
+    .form_error {
+      font-size: $font-xsmall;
+      font-weight: bold;
+      color: #ff0000;
+    }
+
+    .form_submit {
+      display: block;
+      margin: 50px auto 0;
+      width: 150px;
+      letter-spacing: 0.4em;
+      text-indent: 0.4em;
+      font-weight: 500;
+      color: $primary-color;
+      padding: 5px 20px;
+      border: 2px solid $primary-color;
+      border-radius: 3px;
+      background-color: transparent;
+      cursor: pointer;
+      transition: 0.5s;
+    }
+
+    .form_submit:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+@include respond("md") {
+  .container {
+    margin-top: 70px;
+
+    .contact_title {
+      font-size: $font-medium;
+    }
+
+    .contact_description {
+      font-size: $font-small;
+      line-height: 150%;
+    }
+
+    .contact_form {
+      margin-top: 30px;
+
+      .form_contents {
+        margin-top: 30px;
+
+        .form_placeholder {
+          font-size: $font-small;
+        }
+
+        input,
+        select {
+          font-size: $font-small;
+        }
+
+        textarea {
+          height: 150px;
+          font-size: $font-small;
+        }
+
+        & input:valid ~ .form_placeholder,
+        & input:focus ~ .form_placeholder,
+        & select:valid ~ .form_placeholder,
+        & select:focus ~ .form_placeholder,
+        & textarea:valid ~ .form_placeholder,
+        & textarea:focus ~ .form_placeholder {
+          font-size: $font-xsmall;
+        }
+      }
+
+      .form_submit {
+        margin: 30px auto 0;
+        font-size: $font-small;
+      }
+    }
+  }
+}

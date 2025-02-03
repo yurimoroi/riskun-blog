@@ -1,0 +1,7 @@
+@use "../../assets/styles/base/variables" as *;
+
+.post_date {
+  font-size: $font-xsmall;
+  color: #666;
+  letter-spacing: 0.1em;
+}

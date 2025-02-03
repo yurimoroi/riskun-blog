@@ -1,0 +1,140 @@
+@use "../../../assets/styles/base/variables" as *;
+@use "../../../assets/styles/base/mixins" as *;
+
+.container {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 50px;
+
+  .blog {
+    width: 100%;
+    padding: 30px;
+    border-radius: 30px;
+    background: #fff;
+
+    .blog_titles {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+
+      .blog_title {
+        font-size: 1.75em;
+      }
+    }
+
+    .blog_categories {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .blog_thumbnail {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .blog_contents {
+      margin-top: 30px;
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+  .ad_list {
+    min-width: 150px;
+  }
+}
+
+.blog_contents {
+  a,
+  span,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li {
+    letter-spacing: 0.05em;
+    line-height: 200%;
+    font-weight: 400;
+
+    code {
+      padding: 3px 8px;
+      background: #f6f6f6;
+      border-radius: 4px;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  h2 {
+    border-bottom: 1px solid #00000033;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  pre {
+    width: calc(80vw - 180px);
+    overflow-x: auto;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #333;
+    color: #fff;
+  }
+}
+
+@include respond("md") {
+  .container {
+    margin-top: 60px;
+    grid-template-columns: 1fr;
+
+    .blog {
+      .blog_titles {
+        font-size: 0.85em;
+
+        .blog_title {
+          font-size: 1.25em;
+        }
+      }
+    }
+
+    .blog_contents {
+      a,
+      span,
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      li {
+        font-size: 0.85em;
+
+        code {
+          font-size: 0.85em;
+        }
+      }
+
+      pre {
+        width: calc(100vw - 150px);
+        font-size: 0.85em;
+      }
+    }
+  }
+}

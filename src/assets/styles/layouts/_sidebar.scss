@@ -1,0 +1,57 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.l-slide-menu {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: -105%;
+  width: 100%;
+  height: calc(100vh - 50px);
+  background: transparent;
+  border-top: 1px solid #fff;
+  transition: 0.5s;
+  z-index: 10;
+
+  &.active {
+    right: 5px;
+  }
+
+  & > .e-slide-menu-inner {
+    margin-left: auto;
+    width: 300px;
+    height: calc(100vh - 55px);
+    background: $primary-color;
+    border-radius: 10px;
+
+    & > .e-slide-menu-list {
+      margin: 0;
+      padding: 30px 0 0 15px;
+      list-style: none;
+
+      & > .e-slide-menu-item {
+        padding: 20px 0;
+
+        svg {
+          width: 30px;
+          height: 24px;
+        }
+
+        a {
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@include respond("md") {
+  .l-slide-menu {
+    display: block;
+  }
+}

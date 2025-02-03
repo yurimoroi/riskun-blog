@@ -1,0 +1,172 @@
+@use "../../assets/styles/base/variables" as *;
+@use "../../assets/styles/base/mixins" as *;
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 30px;
+  padding: 30px;
+
+  .left_sidebar {
+    grid-column: 1;
+
+    .trend_blogs {
+      .trend_blogs_title {
+        font-weight: bold;
+        font-size: $font-medium;
+        padding: 5px;
+        border-bottom: 1px solid #999;
+      }
+
+      .trend_blogs_cards {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .main_contents {
+    grid-column: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 30px;
+    padding: 30px;
+
+    .introduction {
+      .introduction_title {
+        font-weight: normal;
+        font-size: $font-large;
+        padding: 5px;
+        border-bottom: 1px solid #999;
+      }
+
+      .introduction_contents {
+        margin-top: 30px;
+        text-align: justify;
+        font-size: $font-medium;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .blog_list {
+      margin-top: 100px;
+    }
+
+    .blog_list_more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 8px 15px;
+      border: 1px solid #ffa500;
+      border-radius: 9999px;
+      margin-top: 30px;
+      float: right;
+      transition: 1s;
+
+      &:hover {
+        background: #ffa500;
+
+        span {
+          color: #fff;
+        }
+
+        svg {
+          path {
+            stroke: #fff;
+          }
+        }
+      }
+
+      span {
+        color: #ffa500;
+      }
+    }
+  }
+
+  .right_sidebar {
+    grid-column: 3;
+
+    .myself {
+      .myself_img {
+        min-width: 150px;
+        min-height: 150px;
+        max-width: 200px;
+        max-height: 200px;
+        border-radius: 50%;
+        margin: auto;
+      }
+
+      .myself_name {
+        margin-top: 20px;
+        text-align: center;
+        font-size: $font-large;
+      }
+
+      .myself_background {
+        margin-top: 20px;
+        font-size: $font-small;
+      }
+    }
+  }
+}
+
+@include respond("md") {
+  .container {
+    margin-top: 60px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    .left_sidebar,
+    .main_contents,
+    .right_sidebar {
+      grid-column: 1;
+    }
+
+    .left_sidebar {
+      order: 2;
+
+      .trend_blogs {
+        .trend_blogs_title {
+          font-size: $font-medium;
+        }
+
+        .trend_blogs_cards {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+      }
+    }
+
+    .main_contents {
+      order: 1;
+
+      .introduction {
+        .introduction_title {
+          font-size: $font-medium;
+        }
+
+        .introduction_contents {
+          margin-top: 20px;
+          font-size: $font-small;
+          letter-spacing: 0.03em;
+        }
+      }
+
+      .blog_list {
+        margin-top: 30px;
+      }
+    }
+
+    .right_sidebar {
+      order: 3;
+      padding: 30px;
+      background: #fff;
+      border-radius: 30px;
+    }
+  }
+}
