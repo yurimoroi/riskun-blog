@@ -23,7 +23,11 @@ const BlogCard = ({
   return (
     <Link to={`/blogs/${blogUrl}`} className={style.blog_list_card}>
       <div className={style.blog_list_card_img_outer}>
-        <img src={thumbnailUrl} alt="サムネイル" className={style.blog_list_card_img} />
+        <img
+          src={`./images/${thumbnailUrl}`}
+          alt="サムネイル"
+          className={style.blog_list_card_img}
+        />
       </div>
 
       <div className={style.blog_list_card_contents}>

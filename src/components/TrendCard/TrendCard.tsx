@@ -33,7 +33,11 @@ const TrendCard = ({
       </span>
       <Link to={`/blogs/${blogUrl}`} className={style.trend_blogs_card}>
         <div className={style.trend_blogs_card_img_outer}>
-          <img src={thumbnailUrl} alt="サムネイル" className={style.trend_blogs_card_img} />
+          <img
+            src={`./images/${thumbnailUrl}`}
+            alt="サムネイル"
+            className={style.trend_blogs_card_img}
+          />
         </div>
 
         <p className={style.trend_blogs_card_title}>{title}</p>

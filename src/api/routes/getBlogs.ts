@@ -29,7 +29,12 @@ router.get("/", (_req: Request, res: Response) => {
           slug: slug,
         };
       })
-      .sort((a, b) => b.id - a.id);
+      .sort((present, next) => {
+        const presentDate = new Date(present.frontmatter.postDate);
+        const nextDate = new Date(next.frontmatter.postDate);
+
+        return nextDate.getTime() - presentDate.getTime();
+      });
 
     res.json({ body: { message: blogSlugs, status: 200 } });
   });

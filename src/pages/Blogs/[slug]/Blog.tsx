@@ -15,9 +15,9 @@ const Blog = () => {
     <main className={style.container}>
       <SEO
         title={blog?.frontmatter.title}
-        description="日本は地震や津波、台風、豪雨、火山活動など、自然災害が多い国です。特に、地震や津波、風水害、豪雨などのリスクが高く、備えが必要です。近年では南海トラフ地震や首都直下型地震の発生が懸念されており、日常的な防災対策が命を守るために重要です。家庭や個人でできる備えを意識し、災害への対策を普段から整えておきましょう。"
+        description={blog?.frontmatter.excerpt}
         keywords="リスクん,防災,地震,台風,洪水,火災,感染症,防火管理者,AED,噴火,BCP,初動対応計画,IMP,ERP,緊急時対応計画"
-        ogDescription="日本は地震や津波、台風、豪雨、火山活動など、自然災害が多い国です。特に、地震や津波、風水害、豪雨などのリスクが高く、備えが必要です。近年では南海トラフ地震や首都直下型地震の発生が懸念されており、日常的な防災対策が命を守るために重要です。家庭や個人でできる備えを意識し、災害への対策を普段から整えておきましょう。"
+        ogDescription={blog?.frontmatter.excerpt}
       />
 
       <section className={style.blog}>
@@ -38,9 +38,9 @@ const Blog = () => {
 
             <img
               className={style.blog_thumbnail}
-              src={blog.frontmatter.thumbnailUrl}
+              src={`../images/${blog.frontmatter.thumbnailUrl}`}
               alt="サムネイル"
-            ></img>
+            />
 
             <div className={style.blog_contents}>
               <ReactMarkdown>{blog.content}</ReactMarkdown>
